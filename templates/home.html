@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+*
+{
+	box-sizing:border-box;
+}
+body
+{
+	font-family:'Bahnschrift', sans-serif;
+	margin:0;	
+}
+	.header
+	{
+		width:100%;
+		padding:10px;
+		background-color:#0ff;		
+	}
+	.header1
+	{
+		width:100%;
+		padding:40px;
+		background-color:#282c34;
+		color:#000;		
+		background:url(static/header.jpg);
+		background-position:center;
+		background-repeat:no-repeat;
+		background-size:cover; 
+    text-align:center;
+    position:sticky;
+
+	}
+	.menu
+	{
+		display:flex;
+		background-color:#000;		
+		position:sticky;
+		top:0;
+    justify-content:center;
+	}
+		.menu a
+		{
+			padding:14px 20px;
+			text-decoration:none;
+			color:#fff;		
+		}
+			.menu a:hover
+			{
+				background-color:#ddd;
+				color:#000;
+						
+			}
+			.main
+			{
+				display:flex;
+				flex-wrap:wrap;		
+			}
+				.ldiv
+				{
+				flex:30%;
+				padding:20px;
+				background-color:#f1f1f1;		
+				
+				}
+				.rdiv
+				{
+				flex:70%;	
+				padding:20px;	
+				background-color:#fff;
+				}
+				.one
+				{
+					padding:20px;
+					width:100%;
+					background-color:#ddd;		
+				}
+				.footer
+				{
+					width:100%;
+					padding:20px;
+					background-color:#ddd;
+					color:#000;
+							
+				}
+				.imag
+				{
+					height:300px;
+					width:300px;
+					border:2px solid #666;
+					box-shadow:#666;
+				}
+				img 
+				{
+					padding:20px;		
+				}
+				@media screen and (max-width:700px)
+				{
+						.main,.menu
+						{
+							flex-direction:column;		
+						}
+				}
+        .container {
+            position: absolute;
+            height: 300px;
+            width: 600px;
+            top: 60px;
+            left: calc(50% - 300px);
+            display: flex;
+          }
+
+          .card {
+            display: flex;
+            height: 280px;
+            width: 200px;
+            background-color: #17141d;
+            border-radius: 10px;
+            box-shadow: -1rem 0 3rem #000;
+          /*   margin-left: -50px; */
+            transition: 0.4s ease-out;
+            position: relative;
+            left: 0px;
+          }
+          
+          .card:not(:first-child) {
+              margin-left: -50px;
+          }
+          
+          .card:hover {
+            transform: translateY(-20px);
+            transition: 0.4s ease-out;
+          }
+          
+          .card:hover ~ .card {
+            position: relative;
+            left: 50px;
+            transition: 0.4s ease-out;
+          }
+          
+          .title {
+            color: white;
+            font-weight: 300;
+            position: absolute;
+            left: 20px;
+            top: 15px;
+          }
+          
+          .card:hover {
+            stroke-dashoffset: 100;
+            transition: 0.6s ease-out;
+          }
+</style>
+</head>
+
+<body>
+    <div class="header1"><h1>Theator Management</h1></div>
+    <div class="menu">
+    	<a href="#">Movies</a>
+      <a href="#">Events</a>
+    </div>
+   <!-- <div class="main">
+    	<div class="ldiv"><h1>Products</h1>
+        				<h4>Information</h4>
+                        <hr />
+                        <div class="one">
+                        </div><br />
+						<div class="one" style="height:200px"></div>
+        </div>
+		<div class="rdiv"><h1>Products</h1>
+        				<h4>Information</h4>
+                        <hr />
+                        <div class="one"></div><br />
+						<div class="one" style="height:400px">
+                        </div>
+                        </div>      -->
+		<div class="rdiv" ><h1>Movies</h1>
+        <h4>Information</h4>
+        <hr/>
+        <br/>
+				<div class="one" style="height:400px; height:auto; display:flex; flex-flow:row wrap; justify-content:center;> </div> 	
+        
+        <div class="container" ">
+          <div class="card">
+                <img src="static/header.jpg" height="280px"; width="200px" ;class="title";/></div>
+          <div class="card">
+                <img src="static/header.jpg" height="280px"; width="200px" ;class="title";/></div>
+          <div class="card">
+                <img src="static/header.jpg" height="280px"; width="200px" ;class="title";/></div>
+          <div class="card">
+                <img src="static/header.jpg" height="280px"; width="200px" ;class="title";/></div>
+        </div>
+    </div>
+    
+    </div>
+    <div class="footer"><center><h4>&copy; BITS Pilani Dubai Campus | Devoloped By : </h4></center></div>
+</body>
+</html>
