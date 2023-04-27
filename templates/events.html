@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>DBMS Assignment</title>
+<title>Untitled Document</title>
 <style>
 *
 {
@@ -143,21 +143,14 @@ body
             stroke-dashoffset: 100;
             transition: 0.6s ease-out;
           }
-      .bottom-left {
-          position: absolute;
-          bottom: 8px;
-          left: 16px;
-          text-decoration:none;
-          color:#FFF
-            }
 </style>
 </head>
 
 <body>
-    <div class="header1"><h1>Theater Management</h1></div>
+    <div class="header1"><h1>Theator Management</h1></div>
     <div class="menu">
-    	<a href="home">Movies</a>
-      <a href="templates/events.html">Events</a>
+    	<a href="#">Movies</a>
+      <a href="#">Events</a>
     </div>
    <!-- <div class="main">
     	<div class="ldiv"><h1>Products</h1>
@@ -174,28 +167,24 @@ body
 						<div class="one" style="height:400px">
                         </div>
                         </div>      -->
-		<div class="rdiv" ><h1>Movies</h1>
+		<div class="rdiv" ><h1>Events</h1>
         <h4>Information</h4>
         <hr/>
         <br/>
 				<div class="one" style="height:400px; height:auto; display:flex; flex-flow:row wrap; justify-content:center;></div> 	
         
         <div class="container">
-          {%for mov in movie%}
-          <div class="card"><a href="{{mov['link']}}"><img src="{{mov['img']}}" height="280px"; width="200px"; /><div class="bottom-left">{{mov['title']}}</div></a></div>
-          {%endfor%}
+          <div class="card"><a href=""><img src="static/header.jpg" height="280px"; width="200px" ;/></a></div>
+          <div class="card"><img src="static/header.jpg" height="280px"; width="200px" ;/></div>
+          <div class="card"><img src="static/header.jpg" height="280px"; width="200px" ;/></div>
+          <div class="card"><img src="static/header.jpg" height="280px"; width="200px" ;/></div>
+          <div class="card"><img src="static/header.jpg" height="280px"; width="200px" ;/></div>
+          <div class="card"><img src="static/header.jpg" height="280px"; width="200px" ;/></div>
+          <div class="card"><img src="static/header.jpg" height="280px"; width="200px" ;/></div>
+          <div class="card"><img src="static/header.jpg" height="280px"; width="200px" ;/></div>
         </div>
     </div>
-    <div class="main">
-    	<div class="ldiv"><h1>Movies Display</h1>
-                        <hr />
-						<div class="one" style="height:200px">
-                <p>
-                  {{movie}}
-                </p>
-            </div>
-        </div>
-  
+    
     </div>
     <div class="footer"><center><h4>&copy; BITS Pilani Dubai Campus | Devoloped By : </h4></center></div>
 </body>
