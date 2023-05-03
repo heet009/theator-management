@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+<title>Movie Seat Booking</title>
+<style>
+    
+/*body {
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+}*/
+.btn:hover {
+  background-color: #0c7cd5;
+}
+
+.table {
+  display: flex;
+  position: relative;
+  margin-top: 5px;
+}
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+.screen {
+  background-color: #fff;
+  height: 70px;
+  width: 100%;
+  margin-top: 15px;
+  transform: rotateX(65deg);
+  box-shadow: 0 3px 10px #000;
+}
+
+    label 
+    {
+      position: relative; 
+      cursor: pointer;
+    } 
+    input[type="checkbox"] 
+    {
+        position: absolute;
+        opacity: 0;
+    }
+      
+    :checked ~ .icon-box 
+    {
+        background-color: #6feaf6;
+    }
+    .icon-box 
+    {
+        background-color: #444451;
+        height: 20px;
+        width: 25px;
+        margin: 1px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        color: #fff;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        font-family: 'Roboto';font-size: 12px;
+    } 
+    .icon-box:hover 
+    {
+       /* background-color: #6feaf6;*/
+       cursor: pointer;
+       transform: scale(1.2);
+
+    }
+    .space
+    {
+        width: 20px;
+    } 
+
+
+</style>     
+ 
+</head>
+  <body>
+    <div class="container">
+        
+        <div class="row">
+          <table>
+            <tr>
+              <td>
+                <label>
+                  <input type="checkbox" name="checkboxName" id="A1">
+                  <div class="icon-box">A1</div>
+                </label>
+              </td>
+              <td>
+                <label>
+                  <input type="checkbox" name="checkboxName" id="A2">
+                  <div class="icon-box">A2</div>
+                </label>
+              </td>
+              <td>
+                <div class="space"></div>
+              </td>
+              <td>
+                <label>
+                  <input type="checkbox" name="checkboxName" id="A3">
+                  <div class="icon-box">A3</div>
+                </label>
+              </td>
+              <td>
+                <label>
+                    <input type="checkbox" name="checkboxName" id="A4">
+                    <div class="icon-box">A4</div>
+                </label>
+              </td> 
+              <td>
+                <label>
+                    <input type="checkbox" name="checkboxName" id="A5">
+                    <div class="icon-box">A5</div>
+                </label>
+              </td> 
+              <td>
+                <label>
+                    <input type="checkbox" name="checkboxName" id="A6">
+                    <div class="icon-box">A6</div>
+                </label>
+              </td> 
+              <td>
+                <label>
+                    <input type="checkbox" name="checkboxName" id="A7">
+                    <div class="icon-box">A7</div>
+                </label>
+              </td> 
+              <td>
+                <label>
+                    <input type="checkbox" name="checkboxName" id="A8">
+                    <div class="icon-box">A8</div>
+                </label>
+              </td>
+              <td>
+                <div class="space"></div>
+              </td>
+              <td>
+                <label>
+                    <input type="checkbox" name="checkboxName" id="A9">
+                    <div class="icon-box">A9</div>
+                </label>
+              </td>
+              <td>
+                <label>
+                    <input type="checkbox" name="checkboxName" id="A10">
+                    <div class="icon-box">A10</div>
+                </label>
+              </td>
+            </tr>
+          </div>
+          <!-- <div class="row"> -->
+          <tr>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="B1">
+                  <div class="icon-box">B1</div>
+              </label>
+            </td> 
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="B2">
+                  <div class="icon-box">B2</div>
+              </label>
+            </td> 
+            <td>  
+              <div class="space"></div>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="B3">
+                  <div class="icon-box">B3</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="B4">
+                  <div class="icon-box">B4</div>
+              </label>
+            </td> 
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="B5">
+                  <div class="icon-box">B5</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="B6">
+                  <div class="icon-box">B6</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="B7">
+                  <div class="icon-box">B7</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="B8">
+                  <div class="icon-box">B8</div>
+              </label>
+            </td>
+            <td>
+              <div class="space"></div>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="B9">
+                  <div class="icon-box">B9</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="B10">
+                  <div class="icon-box">B10</div>
+              </label>
+            </td>
+          </tr>
+          <!-- </div> -->
+
+          <!-- <div class="row"> -->
+          <tr>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="C1">
+                  <div class="icon-box">C1</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="C2">
+                  <div class="icon-box">C2</div>
+              </label>
+            </td>
+            <td>
+              <div class="space"></div>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="C3">
+                  <div class="icon-box">C3</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="C4">
+                  <div class="icon-box">C4</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="C5">
+                  <div class="icon-box">C5</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="C6">
+                  <div class="icon-box">C6</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="C7">
+                  <div class="icon-box">C7</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="C8">
+                  <div class="icon-box">C8</div>
+              </label>
+            </td>
+            <td>
+              <div class="space"></div>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="C9">
+                  <div class="icon-box">C9</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="C10">
+                  <div class="icon-box">C10</div>
+              </label>
+            </td>
+          </tr>
+          <!-- </div> -->
+
+          <!-- <div class="row"> -->
+          <tr>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="D1">
+                  <div class="icon-box">D1</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="D2">
+                  <div class="icon-box">D2</div>
+              </label>
+            </td>
+            <td>
+              <div class="space"></div>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="D3">
+                  <div class="icon-box">D3</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="D4">
+                  <div class="icon-box">D4</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="D5">
+                  <div class="icon-box">D5</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="D6">
+                  <div class="icon-box">D6</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="D7">
+                  <div class="icon-box">D7</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="D8">
+                  <div class="icon-box">D8</div>
+              </label>
+            </td>
+            <td>
+              <div class="space"></div>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="D9">
+                  <div class="icon-box">D9</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="D10">
+                  <div class="icon-box">D10</div>
+              </label>
+            </td>
+          </tr>
+          <!-- </div> -->
+
+          <!-- <div class="row"> -->
+          <tr>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="E1">
+                  <div class="icon-box">E1</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="E2">
+                  <div class="icon-box">E2</div>
+              </label>
+            </td>
+            <td>
+              <div class="space"></div>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="E3">
+                  <div class="icon-box">E3</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="E4">
+                  <div class="icon-box">E4</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="E5">
+                  <div class="icon-box">E5</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="E6">
+                  <div class="icon-box">E6</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="E7">
+                  <div class="icon-box">E7</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="E8">
+                  <div class="icon-box">E8</div>
+              </label>
+            </td>
+            <td>
+              <div class="space"></div>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="E9">
+                  <div class="icon-box">E9</div>
+              </label>
+            </td>
+            <td>
+              <label>
+                  <input type="checkbox" name="checkboxName" id="E10">
+                  <div class="icon-box">E10</div>
+              </label>
+            </td>
+          </tr>
+          <!-- </div> -->
+          
+          <!--<button class="btn" onclick="myFunction()">Submit</button>-->
+        </table>
+    </div>
+      <div class="screen"></div>
+      <h7 style="text-align:center; margin-top:0px;">All eyes this way please!</h7>
+    <!--</div>--> 
+    
+    <script>
+       
+    
+</script>
+  </body>
+</html>

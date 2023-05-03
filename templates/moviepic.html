@@ -2,10 +2,326 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<title>TREK CINEMAS</title>
+<style>
+*
+{
+	box-sizing:border-box;
+}
+body
+{
+	font-family:'Bahnschrift', sans-serif;
+	margin:0;	
+	}
+	
+	.header1
+	{
+		width:100%;
+		padding:10px;
+		background-color:#0A1828;
+		display: flex;
+    flex-wrap:wrap;		
+	}
+  
+  img{
+    padding:20px;
+    width:auto;
+    height:170px;
+    	
+  }
+  .header2
+  {
+   
+    color:#BFA181;
+    text-align:left;
+  }
+  h1{
+    padding: 60px 0;
+  }
+	.menu
+	{
+		display:flex;
+		background-color:#000;		
+		position:sticky;
+		top:0;
+	}
+		.menu a
+		{
+			padding:14px 20px;
+			text-decoration:none;
+			color:#fff;		
+		}
+			.menu a:hover
+			{
+				background-color:#ddd;
+				color:#000;
+						
+			}
+			.main
+			{
+				display:flex;
+				flex-wrap:wrap;		
+			}
+				.ldiv
+				{
+				flex:30%;
+				padding:20px;
+        background-color:#4D4D4D;
+				/*background-color:#1338BE;*/
+				color:#fff;
+				}
+				.rdiv
+				{
+				flex:70%;	
+				padding:20px;	
+			  background-color:#EEAD1A;
+        color:#fff;
+				}
+				.one
+				{
+					height:auto;
+					width:100%;
+				/*	background-color:#ddd;*/		
+				}
+				.footer
+				{
+					width:100%;
+					padding:20px;
+					background-color:#ddd;
+					color:#000;
+							
+				}
+				
+				@media screen and (max-width:300px)
+				{
+						.main,.menu,.header1
+						{
+							flex-direction:column;		
+						}
+				}
+        .movie_pic
+        {
+            display: block;
+            margin-left:auto;
+            margin-right:auto;
+            width: 50%;
+            height:auto;
+            border-radius:10%;
+        }
+  e,
+e:before,
+e:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.popup{
+    background-color: #8d8d8d;
+    width: auto;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    color: #fff;
+    border-radius: 8px;
+    font-family: "Poppins",sans-serif;
+    display: none; 
+    text-align: center;
+	-webkit-animation: fadeIn 1s ease-in-out;
+	animation: fadeIn 1s ease-in-out;
+}
+  .seat
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+.popupbtn{
+    display: block;
+    margin:  0 0px 0px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #ffffff;
+    background: #03549a;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.popup h2{
+	margin-top: -20px;
+}
+.popup p{
+    font-size: 14px;
+    text-align: justify;
+    margin: 20px 0;
+    line-height: 25px;
+}
+.popup a{
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #0f72e5;
+	border-radius: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 0;
+}
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+@-webkit-keyframes fadeOut {
+  from {opacity: 1;} 
+  to {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  from {opacity: 1;}
+  to {opacity:0 ;}
+}
+</style>
 </head>
 
 <body>
-    <p>Img {{}}</p>
+	  <!--<div class=header1> 
+      <div class=header><a href="/home"><img src="/static/logo_dbms_transparent.png"></a></div>
+      <div class="header2"><h1><i>TREK CINEMAS</i></h1></div>
+    </div>-->
+  {% include 'header.html' %}
+  
+    <div class="main">
+    	<div class="ldiv"><h2>You are Booking for :</h2>
+                        <hr />
+						<div class="one" style="height:auto; padding:1px;">
+                            <img src=/{{mov.img}} class="movie_pic"/>
+                            <center><h3>{{mov.title}}</h3></center>
+                            <center><h4>&starf; {{mov.imdbrating}} / 10 </h4></center>
+                            <center><img src="/static/IMDb.png" style="height:100px;"></center>
+                            <a href="/home"><h6 class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1rem;"">Back To Movies</h6></a>
+                        </div>
+        </div>
+		<div class="rdiv"><h2>Theater and Timings</h2>
+                        <hr />
+						<div class="one" style="height:auto; padding:20px;">
+                            <h4><i>Theater 1</i></h4>
+                            <div class="d-grid gap-2 d-md-block">
+                                <button class="btn btn-outline-secondary" type="button" value="8:00 AM" id="t1">8:00 AM</button>
+                                <!--<button class="btn btn-outline-secondary" type="button" id="sa2" value="12:00 PM">12:00 PM</button>
+                                <button class="btn btn-outline-secondary" type="button">4:00 PM</button>
+                                <button class="btn btn-outline-secondary" type="button">8:00 PM</button>-->
+                            </div>
+                            <br>
+                            <h4><i>Theater 2</i></h4>
+                            <div class="d-grid gap-2 d-md-block">
+                                <button class="btn btn-outline-secondary" type="button" value="12:00 PM" id="t2">12:00 PM</button>
+                                <!--<button class="btn btn-outline-secondary" type="button">12:00 PM</button>
+                                <button class="btn btn-outline-secondary" type="button">8:00 PM</button>
+                                <button class="btn btn-outline-secondary" type="button">8:00 PM</button>-->
+                            </div>
+                            <br>
+                            <h4><i>Theater 3</i></h4>
+                            <div class="d-grid gap-2 d-md-block">
+                                <button class="btn btn-outline-secondary" type="button" value="4:00 PM" id="t3">4:00 PM</button>
+                                <!--<button class="btn btn-outline-secondary" type="button">12:00 PM</button>
+                                <button class="btn btn-outline-secondary" type="button">4:00 PM</button>
+                                <button class="btn btn-outline-secondary" type="button">8:00 PM</button>-->
+                            </div>
+                            <br>
+                            <h4><i>Theater 4</i></h4>
+                            <div class="d-grid gap-2 d-md-block">
+                                <button class="btn btn-outline-secondary" type="button" value="6:30 PM" id="t4">6:30 PM</button>
+                                <!--<button class="btn btn-outline-secondary" type="button">12:00 PM</button>
+                                <button class="btn btn-outline-secondary" type="button">4:00 PM</button>
+                                <button class="btn btn-outline-secondary" type="button">8:00 PM</button>-->
+                            </div>
+                            <br>
+                            <h4><i>Theater 5</i></h4>
+                            <div class="d-grid gap-2 d-md-block">
+                                <button class="btn btn-outline-secondary" type="button" value="11:00 PM" id="t5">11:00 PM</button>
+                                <!--<button class="btn btn-outline-secondary" type="button">12:00 PM</button>
+                                <button class="btn btn-outline-secondary" type="button">4:00 PM</button>
+                                <button class="btn btn-outline-secondary" type="button">8:00 PM</button>-->
+                            </div>
+
+
+                        </div>
+                        </div>
+					 <br />
+					
+						
+    </div>
+    <div class="footer"><center><h4>&copy; BITS Pilani Dubai Campus | Developed By :</h4></center></div>
+  
+    <div class="e">
+		<div class="popup">
+			<!--<button class="popupbtn" id="close">&times;</button>-->
+      <button type="button" class="btn-close" aria-label="Close" id="close" style="margin-left:300px"></button>
+      <p style="font-size:22px;"> 
+      <span id="result" style="text-align:left;"></span>
+      </p>
+      <div class=seat>
+        {%include 'seats.html'%}
+      </div>
+          <p style="color: #00ff62;">No. of Seats Selected : <span id="count" style="color: #fff;">0</span></p>
+      <button class="btn btn-outline-primary" type="button">Book</button>
+		</div>
+	</div>
+
+  <script>
+      
+    const buttons = document.querySelectorAll(".btn-outline-secondary");
+    for (let index = 0; index < buttons.length; index++) 
+    { 
+    buttons[index].addEventListener("click", function(){
+			setTimeout(
+				function open(event){
+					document.querySelector(".popup").style.display = "block";
+          const buttonvalue = buttons[index].value;
+          document.getElementById("result").innerHTML = buttonvalue;
+				},200
+				
+			)
+		});
+		document.querySelector("#close").addEventListener("click", function(){
+			document.querySelector(".popup").style.display = "none";
+		});
+    }
+    let checkboxes = document.getElementsByName('checkboxName');
+      let countText = document.getElementById('count');
+
+      for (let i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].addEventListener('change', function() 
+        {
+          let count = 0;
+          let checkedIDs = [];
+          
+          for (let j = 0; j < checkboxes.length; j++) {
+            if (checkboxes[j].checked) {
+              count++;
+              checkedIDs.push(checkboxes[j].id);
+            }
+          }
+
+          countText.innerHTML = count+' ( ' + checkedIDs.join(', ') + ' )' ;
+        });
+      } 
+    
+  </script>
 </body>
 </html>
+

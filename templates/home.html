@@ -65,22 +65,23 @@ body
 				}
 				.rdiv
 				{
-				flex:70%;	
+				flex:0%;	
 				padding:20px;	
 				background-color:#fff;
+        color:#1d1d1;
 				}
 				.one
 				{
 					padding:20px;
 					width:100%;
-					background-color:#ddd;		
+					/*background-color:#ddd;	*/	
 				}
 				.footer
 				{
 					width:100%;
 					padding:20px;
 					background-color:#ddd;
-					color:#000;
+					color:#2272FF;
 							
 				}
 				.card img
@@ -113,7 +114,7 @@ body
             display: flex;
             height: 280px;
             width: 200px;
-            background-color: #f1f1f1;
+            background-color: #fff;
             border-radius: 50%;
            /* box-shadow: -1rem 0 3rem #000;
           /*   margin-left: -50px; */
@@ -124,7 +125,7 @@ body
           }
           
           .card:not(:first-child) {
-              margin-left: -50px;
+              margin-left: -40px;
           }
           
           .card:hover {
@@ -149,40 +150,23 @@ body
           bottom: 8px;
           left: 16px;
           text-decoration:none;
-          color:#FFF
+          color:#FCA510
             }
+  
 </style>
 </head>
 
 <body>
-    <div class="header1"><h1>THEATER MANAGEMENT</h1></div>
-    <div class="menu">
-      <button type="button" class="btn btn-outline-warning" style="border:none" ><a href="home">Movies</a></button>
-      <button type="button" class="btn btn-outline-warning" style="border:none"><a href="login">Login</a></button>  
-    </div>
-   
-		<div class="rdiv" ><h1>Movies</h1>
-        <h4>Information</h4>
+  {% include 'header.html' %}
+		<div class="rdiv" ><h2>MOVIES {{login['Name']}}</h2>
         <hr/>
-        <br/>
 				<div class="one" style="height:400px; height:auto; display:flex; flex-flow:row wrap; justify-content:center;></div> 	
         
         <div class="container">
           {%for mov in movie%}
-          <a href="{{mov['link']}}" class="card"><img src="{{mov['img']}}" height="280px"; width="200px"; /><div class="bottom-left">{{mov['title']}}</div></a>
+          <a href="moviepic/{{mov['id']}}" class="card"><img src="{{mov['img']}}" height="280px"; width="200px"; /><div class="bottom-left"><b><i>{{mov['title']}}</i></b></div></a>
           {%endfor%}
         </div>
-    </div>
-    <div class="main">
-    	<div class="ldiv"><h1>Movies Display</h1>
-                        <hr />
-						<div class="one" style="height:200px">
-                <p>
-                  {{movie}}
-                </p>
-            </div>
-        </div>
-  
     </div>
     <div class="footer"><center><h4>&copy; BITS Pilani Dubai Campus | Developed By : </h4></center></div>
 </body>
