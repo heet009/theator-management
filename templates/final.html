@@ -57,13 +57,13 @@ body
 				{
 				flex:70%;	
 				padding:20px;	
-				background-color:#ddd;
+				background-color:#fff;
 				}
 				.one
 				{
 					padding:20px;
 					width:100%;
-					background-color:#3e3d53;		
+					background-color:#ddd;		
 				}
 				.footer
 				{
@@ -146,7 +146,8 @@ body
               text-decoration: none;
               padding: 8px 0;
           }
-  .movie_pic
+          
+        .movie_pic
         {
             display: block;
             margin-left:auto;
@@ -155,8 +156,6 @@ body
             height:auto;
             border-radius:10%;
         }
-          
-        
   
 </style>
 </head>
@@ -165,67 +164,30 @@ body
 	  {% include 'header.html' %}
   
     <div class="main">
-    	<div class="ldiv"><h2>Movie</h2>
+    	<div class="ldiv"><h2>Your Seats are booked!</h2>
                         <hr/>
+                        <div class="one" style="height:600px; padding:1px;">
                           <img src=/{{mov.img}} class="movie_pic"/>
                           <center><h3>{{mov.title}}</h3></center>
                           <center><h5><span style="background-color=#EEAD1A;">&starf;</span> {{mov.imdbrating}} / 10 </h5></center>
                           <center><img src="/static/IMDb.png" style="height:100px;"></center>
-                          <center><h3> {{thea}} - {{t}}</h3></center>
+                          <!--<a href="/home"><h6 class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1rem;" onclick="history.back()">Back To Movies</h6></a>-->
+                        </div>
+        
+       
       </div>
-		<div class="rdiv"><h2 style="text-align:center">Select Seat</h2>
+		<div class="rdiv"><h2>Booking Information</h2>
                         <hr />
-						<div class="one" style="height:400px">
-                    <p style="font-size:22px;"> 
-                    <div class=seat>
-                      {%include 'seats.html'%}
-                    </div>
-              <br>
-                        <p style="color: #00ff62; text-align:center;">No. of Seats Selected : <span id="count" style="color: #fff;">0</span></p>
-                    <center><button class="btn btn-outline-primary" id="btnbook" onclick="book()">Book</button></center>
-              	</div>
-              </div>						
+								<div class="one" style="height:600px">
+            <h3>Your Name : {{name}}</h3>
+            <h3>Your Email-ID : {{email}}</h3>
+            <h3>Booking For : {{mov.title}}</h3>
+            <h3>Your Movie is in Theater : {{theator}}</h3>
+            <h3>Movie Time : {{time_m}}</h3>
+            <h3>You have booked {{no_s}} seats {{seats}}</h3>
+            <h3>Your Total Amount is : {{total}}</h3>
+        </div>			
     </div>
     <div class="footer"><center><h4>&copy; BITS Pilani Dubai Campus | Developed By :</h4></center></div>
-
-  <script>
-      
-    
-    let checkboxes = document.getElementsByName('checkboxName');
-      let countText = document.getElementById('count');
-    let checkedIDs = [];
-    //let btn = document.getElementById('btnbook');
-    
-
-      for (let i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].addEventListener('change', function() 
-        {
-          var count = 0;
-          checkedIDs = [];
-          
-          for (let j = 0; j < checkboxes.length; j++) {
-            if (checkboxes[j].checked) {
-              count++;
-              checkedIDs.push(checkboxes[j].id);
-            }
-          }
-
-          countText.innerHTML = count+' ( ' + checkedIDs.join(', ') + ' )' ;
-          
-        });
-      }
-        let url = '/final?checkedIDs=' + encodeURIComponent(JSON.stringify(checkedIDs));
-  
-        //  const button = document.getElementById('btnbook');
-        //button.addEventListener('click', );
-    
-      function book() 
-          {
-          url = '/final?checkedIDs=' + encodeURIComponent(JSON.stringify(checkedIDs));
-            
-            window.location.href = url;
-            
-          }
-  </script>
 </body>
 </html>

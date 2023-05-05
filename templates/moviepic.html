@@ -111,89 +111,7 @@ body
             height:auto;
             border-radius:10%;
         }
-  e,
-e:before,
-e:after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-.popup{
-    background-color: #8d8d8d;
-    width: auto;
-    padding: 30px 40px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-    color: #fff;
-    border-radius: 8px;
-    font-family: "Poppins",sans-serif;
-    display: none; 
-    text-align: center;
-	-webkit-animation: fadeIn 1s ease-in-out;
-	animation: fadeIn 1s ease-in-out;
-}
-  .seat
-  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-.popupbtn{
-    display: block;
-    margin:  0 0px 0px auto;
-    background-color: transparent;
-    font-size: 30px;
-    color: #ffffff;
-    background: #03549a;
-    border-radius: 100%;
-    width: 40px;
-    height: 40px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-.popup h2{
-	margin-top: -20px;
-}
-.popup p{
-    font-size: 14px;
-    text-align: justify;
-    margin: 20px 0;
-    line-height: 25px;
-}
-.popup a{
-    display: block;
-    width: 150px;
-    position: relative;
-    margin: 10px auto;
-    text-align: center;
-    background-color: #0f72e5;
-	border-radius: 20px;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 8px 0;
-}
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;} 
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-@-webkit-keyframes fadeOut {
-  from {opacity: 1;} 
-  to {opacity: 0;}
-}
-
-@keyframes fadeOut {
-  from {opacity: 1;}
-  to {opacity:0 ;}
-}
+ 
 </style>
 </head>
 
@@ -208,57 +126,22 @@ e:after{
     	<div class="ldiv"><h2>You are Booking for :</h2>
                         <hr />
 						<div class="one" style="height:auto; padding:1px;">
-                            <img src=/{{mov.img}} class="movie_pic"/>
-                            <center><h3>{{mov.title}}</h3></center>
-                            <center><h4>&starf; {{mov.imdbrating}} / 10 </h4></center>
-                            <center><img src="/static/IMDb.png" style="height:100px;"></center>
-                            <a href="/home"><h6 class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1rem;"">Back To Movies</h6></a>
+                          <img src=/{{mov.img}} class="movie_pic"/>
+                          <center><h3>{{mov.title}}</h3></center>
+                          <center><h5><span style="background-color=#EEAD1A;">&starf;</span> {{mov.imdbrating}} / 10 </h5></center>
+                          <center><img src="/static/IMDb.png" style="height:100px;"></center>
+                          <!--<a href="/home"><h6 class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1rem;" onclick="history.back()">Back To Movies</h6></a>-->
                         </div>
         </div>
 		<div class="rdiv"><h2>Theater and Timings</h2>
                         <hr />
 						<div class="one" style="height:auto; padding:20px;">
-                            <h4><i>Theater 1</i></h4>
+              {% for show in sh %}
+                            <h4  style="margin-top:10px;"><i>{{show['room']}}</i></h4>
                             <div class="d-grid gap-2 d-md-block">
-                                <button class="btn btn-outline-secondary" type="button" value="8:00 AM" id="t1">8:00 AM</button>
-                                <!--<button class="btn btn-outline-secondary" type="button" id="sa2" value="12:00 PM">12:00 PM</button>
-                                <button class="btn btn-outline-secondary" type="button">4:00 PM</button>
-                                <button class="btn btn-outline-secondary" type="button">8:00 PM</button>-->
+                                <a href="/booking/{{show['room']}}/{{show['timing']}}"<button class="btn btn-outline-secondary" type="button" value="8:00 AM" name="t1">{{show['timing']}}</a>
                             </div>
-                            <br>
-                            <h4><i>Theater 2</i></h4>
-                            <div class="d-grid gap-2 d-md-block">
-                                <button class="btn btn-outline-secondary" type="button" value="12:00 PM" id="t2">12:00 PM</button>
-                                <!--<button class="btn btn-outline-secondary" type="button">12:00 PM</button>
-                                <button class="btn btn-outline-secondary" type="button">8:00 PM</button>
-                                <button class="btn btn-outline-secondary" type="button">8:00 PM</button>-->
-                            </div>
-                            <br>
-                            <h4><i>Theater 3</i></h4>
-                            <div class="d-grid gap-2 d-md-block">
-                                <button class="btn btn-outline-secondary" type="button" value="4:00 PM" id="t3">4:00 PM</button>
-                                <!--<button class="btn btn-outline-secondary" type="button">12:00 PM</button>
-                                <button class="btn btn-outline-secondary" type="button">4:00 PM</button>
-                                <button class="btn btn-outline-secondary" type="button">8:00 PM</button>-->
-                            </div>
-                            <br>
-                            <h4><i>Theater 4</i></h4>
-                            <div class="d-grid gap-2 d-md-block">
-                                <button class="btn btn-outline-secondary" type="button" value="6:30 PM" id="t4">6:30 PM</button>
-                                <!--<button class="btn btn-outline-secondary" type="button">12:00 PM</button>
-                                <button class="btn btn-outline-secondary" type="button">4:00 PM</button>
-                                <button class="btn btn-outline-secondary" type="button">8:00 PM</button>-->
-                            </div>
-                            <br>
-                            <h4><i>Theater 5</i></h4>
-                            <div class="d-grid gap-2 d-md-block">
-                                <button class="btn btn-outline-secondary" type="button" value="11:00 PM" id="t5">11:00 PM</button>
-                                <!--<button class="btn btn-outline-secondary" type="button">12:00 PM</button>
-                                <button class="btn btn-outline-secondary" type="button">4:00 PM</button>
-                                <button class="btn btn-outline-secondary" type="button">8:00 PM</button>-->
-                            </div>
-
-
+              {% endfor %}
                         </div>
                         </div>
 					 <br />
@@ -267,61 +150,9 @@ e:after{
     </div>
     <div class="footer"><center><h4>&copy; BITS Pilani Dubai Campus | Developed By :</h4></center></div>
   
-    <div class="e">
-		<div class="popup">
-			<!--<button class="popupbtn" id="close">&times;</button>-->
-      <button type="button" class="btn-close" aria-label="Close" id="close" style="margin-left:300px"></button>
-      <p style="font-size:22px;"> 
-      <span id="result" style="text-align:left;"></span>
-      </p>
-      <div class=seat>
-        {%include 'seats.html'%}
-      </div>
-          <p style="color: #00ff62;">No. of Seats Selected : <span id="count" style="color: #fff;">0</span></p>
-      <button class="btn btn-outline-primary" type="button">Book</button>
-		</div>
-	</div>
-
-  <script>
-      
-    const buttons = document.querySelectorAll(".btn-outline-secondary");
-    for (let index = 0; index < buttons.length; index++) 
-    { 
-    buttons[index].addEventListener("click", function(){
-			setTimeout(
-				function open(event){
-					document.querySelector(".popup").style.display = "block";
-          const buttonvalue = buttons[index].value;
-          document.getElementById("result").innerHTML = buttonvalue;
-				},200
-				
-			)
-		});
-		document.querySelector("#close").addEventListener("click", function(){
-			document.querySelector(".popup").style.display = "none";
-		});
-    }
-    let checkboxes = document.getElementsByName('checkboxName');
-      let countText = document.getElementById('count');
-
-      for (let i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].addEventListener('change', function() 
-        {
-          let count = 0;
-          let checkedIDs = [];
-          
-          for (let j = 0; j < checkboxes.length; j++) {
-            if (checkboxes[j].checked) {
-              count++;
-              checkedIDs.push(checkboxes[j].id);
-            }
-          }
-
-          countText.innerHTML = count+' ( ' + checkedIDs.join(', ') + ' )' ;
-        });
-      } 
     
-  </script>
+
+  
 </body>
 </html>
 
